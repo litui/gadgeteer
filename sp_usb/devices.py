@@ -1,6 +1,3 @@
-from argparse import Namespace
-import errno
-import functionfs
 import os
 from functionfs.gadget import Gadget, ConfigFunctionKernel
 
@@ -69,9 +66,7 @@ class ACMGadget(Gadget):
             ],
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
-            lang_dict={
-                0x409: {"product": "GadgeteerACM", "manufacturer": "Gadgeteer"}
-            },
+            lang_dict={0x409: {"product": "GadgeteerACM", "manufacturer": "Gadgeteer"}},
             name="gadgeteer_acm",
         )
 
@@ -93,9 +88,7 @@ class ECMGadget(Gadget):
             ],
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
-            lang_dict={
-                0x409: {"product": "GadgeteerECM", "manufacturer": "Gadgeteer"}
-            },
+            lang_dict={0x409: {"product": "GadgeteerECM", "manufacturer": "Gadgeteer"}},
             name="gadgeteer_ecm",
         )
 

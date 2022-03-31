@@ -2,13 +2,14 @@ import threading
 import time
 from . import devices
 
+
 class GadgetManager:
     def __init__(self) -> None:
         self.types = {
-            'acm': (devices.ACMGadget, []),
-            'ecm': (devices.ECMGadget, ['dev_addr', 'host_addr']),
-            'mass_storage': (devices.MassStorageGadget, ['lun_list']),
-            'rndis': (devices.RNDISGadget, ['dev_addr', 'host_addr'])
+            "acm": (devices.ACMGadget, []),
+            "ecm": (devices.ECMGadget, ["dev_addr", "host_addr"]),
+            "mass_storage": (devices.MassStorageGadget, ["lun_list"]),
+            "rndis": (devices.RNDISGadget, ["dev_addr", "host_addr"]),
         }
         self.running = True
         self.activated = False
@@ -18,7 +19,7 @@ class GadgetManager:
     def active(self):
         if self._active:
             return self._active
-        return 'none'
+        return "none"
 
     def deactivate(self):
         """Stop the currently active gadget"""
@@ -33,9 +34,9 @@ class GadgetManager:
             return False
 
         thread_kwargs = {}
-        thread_kwargs['gadget'] = self.types[g_type][0]
-        thread_kwargs['g_type'] = g_type
-        thread_kwargs['gadget_kwargs'] = kwargs
+        thread_kwargs["gadget"] = self.types[g_type][0]
+        thread_kwargs["g_type"] = g_type
+        thread_kwargs["gadget_kwargs"] = kwargs
 
         thread = threading.Thread(target=self._run_usb_gadget, kwargs=thread_kwargs)
         thread.daemon = True
@@ -43,7 +44,7 @@ class GadgetManager:
         time.sleep(0.5)
         thread.start()
 
-    def _run_usb_gadget(self, gadget=None, g_type='', gadget_kwargs={}):
+    def _run_usb_gadget(self, gadget=None, g_type="", gadget_kwargs={}):
         print("Started USB Gadget Thread for {} Device".format(g_type))
 
         try:
@@ -53,8 +54,10 @@ class GadgetManager:
                 while self.activated and self.running:
                     time.sleep(0.1)
         except OSError:
-            print("An OSError occurred; probably crashed and failed to remove the configFS.\n"
-                  "A reboot should fix this.")
+            print(
+                "An OSError occurred; probably crashed and failed to remove the configFS.\n"
+                "A reboot should fix this."
+            )
             return False
 
         print("Exiting USB Gadget Thread for {} Device".format(g_type))
