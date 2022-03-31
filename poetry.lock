@@ -1,0 +1,98 @@
+[[package]]
+name = "docutils"
+version = "0.18.1"
+description = "Docutils -- Python Documentation Utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "functionfs"
+version = "0.9.0"
+description = "Pythonic API for linux's functionfs."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+ioctl-opt = "*"
+libaio = "*"
+
+[[package]]
+name = "ioctl-opt"
+version = "1.2.2"
+description = "Functions to compute fnctl.ioctl's opt argument"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "libaio"
+version = "0.9.1"
+description = "Linux AIO API wrapper"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "lockfile"
+version = "0.12.2"
+description = "Platform-independent file locking module"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyjson"
+version = "1.3.0"
+description = "Compare the similarities between two JSONs."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "python-daemon"
+version = "2.3.0"
+description = "Library to implement a well-behaved Unix daemon process."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+docutils = "*"
+lockfile = ">=0.10"
+
+[package.extras]
+test = ["coverage", "docutils", "testscenarios (>=0.4)", "testtools"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "2656e45ed084b9fac74ba392c0bc6bba7d3b7118d4b601b3adb8627dad642f2c"
+
+[metadata.files]
+docutils = [
+    {file = "docutils-0.18.1-py2.py3-none-any.whl", hash = "sha256:23010f129180089fbcd3bc08cfefccb3b890b0050e1ca00c867036e9d161b98c"},
+    {file = "docutils-0.18.1.tar.gz", hash = "sha256:679987caf361a7539d76e584cbeddc311e3aee937877c87346f31debc63e9d06"},
+]
+functionfs = [
+    {file = "functionfs-0.9.0.tar.gz", hash = "sha256:a92468ed7c0f134808dd7dbb88f36e91774db0b6df4fa5d09dca0fb0a1f463c4"},
+]
+ioctl-opt = [
+    {file = "ioctl-opt-1.2.2.tar.gz", hash = "sha256:9628bbd6728f90d019759f54d20b741ddbf9f8db8d41976da4332492f669d643"},
+]
+libaio = [
+    {file = "libaio-0.9.1.tar.gz", hash = "sha256:9ee293a95ee56568b714922c2308878474b4ea9d05e7f4ba1e5e49873494b95d"},
+]
+lockfile = [
+    {file = "lockfile-0.12.2-py2.py3-none-any.whl", hash = "sha256:6c3cb24f344923d30b2785d5ad75182c8ea7ac1b6171b08657258ec7429d50fa"},
+    {file = "lockfile-0.12.2.tar.gz", hash = "sha256:6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799"},
+]
+pyjson = [
+    {file = "pyjson-1.3.0-py3-none-any.whl", hash = "sha256:fb20354b24ece45cd21dfb8defafd6278f026c28d1d37b3ad8a0c68374f26bfd"},
+    {file = "pyjson-1.3.0.tar.gz", hash = "sha256:343f336e766af2fbd138b11d6734bba8c1c40765c36d3c7b46ec4a9f589d9628"},
+]
+python-daemon = [
+    {file = "python-daemon-2.3.0.tar.gz", hash = "sha256:bda993f1623b1197699716d68d983bb580043cf2b8a66a01274d9b8297b0aeaf"},
+    {file = "python_daemon-2.3.0-py2.py3-none-any.whl", hash = "sha256:191c7b67b8f7aac58849abf54e19fe1957ef7290c914210455673028ad454989"},
+]
