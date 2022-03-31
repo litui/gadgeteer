@@ -4,10 +4,6 @@ A daemon to control your USB Gadgets via json over a unix domain socket.
 
 This has been tested briefly on a Raspberry Pi Zero 2 W.
 
-## Dependencies
-
-* 
-
 ## Commands
 
 ### Status
