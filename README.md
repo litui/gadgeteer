@@ -11,8 +11,8 @@ Example Request:
 
 ```json
 {
-  type: "get",
-  target: "status"
+  "type": "get",
+  "target": "status"
 }
 ```
 
@@ -20,9 +20,9 @@ Example Response:
 
 ```json
 {
-  type: "status",
-  msg: {
-    active: "ecm"
+  "type": "status",
+  "msg": {
+    "active": "ecm"
   }
 }
 ```
@@ -32,11 +32,11 @@ Example Request:
 
 ```json
 {
-  type: "set",
-  target: "active",
-  msg: {
-    mode: "mass_storage",
-    lun_list: [
+  "type": "set",
+  "target": "active",
+  "msg": {
+    "mode": "mass_storage",
+    "lun_list": [
       "/disks/drive1.img"
     ]
   }
@@ -46,9 +46,9 @@ Example Request:
 Example Response:
 ```json
 {
-  type: "status",
-  msg: {
-    active: "mass_storage"
+  "type": "status",
+  "msg": {
+    "active": "mass_storage"
   }
 }
 ```
