@@ -64,15 +64,15 @@ class ACMGadget(Gadget):
                 {
                     "function_list": [ACMFunction()],
                     "MaxPower": 250,
-                    "lang_dict": {0x409: {"configuration": "Sprocket ACM Gadget"}},
+                    "lang_dict": {0x409: {"configuration": "Gadgeteer ACM"}},
                 }
             ],
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
             lang_dict={
-                0x409: {"product": "SprocketACM", "manufacturer": "Sprocket Systems"}
+                0x409: {"product": "GadgeteerACM", "manufacturer": "Gadgeteer"}
             },
-            name="sprocket_acm",
+            name="gadgeteer_acm",
         )
 
 
@@ -88,15 +88,15 @@ class ECMGadget(Gadget):
                         )
                     ],
                     "MaxPower": 250,
-                    "lang_dict": {0x409: {"configuration": "Sprocket ECM Gadget"}},
+                    "lang_dict": {0x409: {"configuration": "Gadgeteer ECM"}},
                 }
             ],
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
             lang_dict={
-                0x409: {"product": "SprocketECM", "manufacturer": "Sprocket Systems"}
+                0x409: {"product": "GadgeteerECM", "manufacturer": "Gadgeteer"}
             },
-            name="sprocket_ecm",
+            name="gadgeteer_ecm",
         )
 
 
@@ -108,18 +108,18 @@ class MassStorageGadget(Gadget):
                 {
                     "function_list": [MassStorageFunction(lun_list=lun_list)],
                     "MaxPower": 250,
-                    "lang_dict": {0x409: {"configuration": "Sprocket Mass Storage"}},
+                    "lang_dict": {0x409: {"configuration": "Gadgeteer Mass Storage"}},
                 }
             ],
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
             lang_dict={
                 0x409: {
-                    "product": "SprocketStorage",
-                    "manufacturer": "Sprocket Systems",
+                    "product": "GadgeteerMS",
+                    "manufacturer": "Gadgeteer",
                 }
             },
-            name="sprocket_ms",
+            name="gadgeteer_ms",
         )
 
 
@@ -135,7 +135,7 @@ class RNDISGadget(Gadget):
                         )
                     ],
                     "MaxPower": 250,
-                    "lang_dict": {0x409: {"configuration": "Sprocket RNDIS Gadget"}},
+                    "lang_dict": {0x409: {"configuration": "Gadgeteer RNDIS"}},
                 }
             ],
             bDeviceClass=0xEF,
@@ -149,9 +149,9 @@ class RNDISGadget(Gadget):
             idVendor=0x1D6B,  # Linux Foundation
             idProduct=0x0104,  # Multifunction Composite Gadget
             lang_dict={
-                0x409: {"product": "SprocketRNDIS", "manufacturer": "Sprocket Systems"}
+                0x409: {"product": "GadgeteerRNDIS", "manufacturer": "Gadgeteer"}
             },
-            name="sprocket_rndis",
+            name="gadgeteer_rndis",
         )
 
 
