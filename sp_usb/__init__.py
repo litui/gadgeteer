@@ -41,23 +41,27 @@ class GadgetManager:
         thread = threading.Thread(target=self._run_usb_gadget, kwargs=thread_kwargs)
         thread.daemon = True
         self.deactivate()
+
+        # Sleep before and after thread start to ensure state
+        # TODO: not perfect as is - better conditions checking for state needed
         time.sleep(0.5)
         thread.start()
+        time.sleep(0.5)
 
     def _run_usb_gadget(self, gadget=None, g_type="", gadget_kwargs={}):
         print("Started USB Gadget Thread for {} Device".format(g_type))
 
-        try:
-            with gadget(**gadget_kwargs) as g:
-                self.activated = True
-                self._active = g_type
-                while self.activated and self.running:
-                    time.sleep(0.1)
-        except OSError:
-            print(
-                "An OSError occurred; probably crashed and failed to remove the configFS.\n"
-                "A reboot should fix this."
-            )
-            return False
+        # try:
+        with gadget(**gadget_kwargs) as g:
+            self.activated = True
+            self._active = g_type
+            while self.activated and self.running:
+                time.sleep(0.1)
+        # except OSError:
+        #     print(
+        #         "An OSError occurred; probably crashed and failed to remove the configFS.\n"
+        #         "A reboot should fix this."
+        #     )
+        #     return False
 
         print("Exiting USB Gadget Thread for {} Device".format(g_type))

@@ -3,6 +3,7 @@ import json
 import os
 import socket
 import threading
+import time
 from sp_usb import GadgetManager
 
 SOCKET_ADDR = os.path.join(
@@ -104,5 +105,5 @@ def main():
 
 
 if __name__ == "__main__":
-    with daemon.DaemonContext():
+    # with daemon.DaemonContext():
         main()
